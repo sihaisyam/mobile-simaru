@@ -13,9 +13,8 @@ class HomeController extends GetxController {
 
   Future<void> loadUser() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    final user = jsonDecode(prefs.getString('user') ?? "") as Map<String, dynamic>;
-    profile.value = User(firstName: user['firstName']);
-    firstName.value =  user['firstName'];
+    final user = jsonDecode(prefs.getString('user') ?? "") as Map<User, dynamic>;
+    profile.value = user as User;
   }
 }
 
