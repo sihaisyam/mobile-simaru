@@ -14,14 +14,13 @@ class LoginController extends GetxController {
 
  Future<void> login() async {
 
-  var url = Uri.parse('https://dummyjson.com/' + 'auth/login');
+  var url = Uri.parse('https://simaru.amisbudi.cloud/api/auth/login');
   http.Response response = await http.post(url,
   headers: {'Content-Type': 'application/json'},
   body:jsonEncode( 
   {
-    'username': email.value,
+    'email': email.value,
     'password': password.value,
-    'expiresInMins': 30, // optional, defaults to 60
   })
   );
   print('Response body: ${response.body}');
