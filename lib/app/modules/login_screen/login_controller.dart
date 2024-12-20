@@ -32,7 +32,6 @@ class LoginController extends GetxController {
       // Save the email to local storage
       SharedPreferences prefs = await SharedPreferences.getInstance();
       await prefs.setString('user', jsonEncode(userData));
-      await prefs.setString('firstName', userData['firstName']);
 
       // Navigate to another page
       Get.off(HomePage()); // Replace with your next page

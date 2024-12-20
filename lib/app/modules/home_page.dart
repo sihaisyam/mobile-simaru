@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_intro/app/data/model/User.dart';
+import 'package:getx_intro/app/modules/room_screen/room_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import './product_screen/product_page.dart';
 import './profile_screen/profile_page.dart';
@@ -31,6 +32,7 @@ class BottomNavController extends GetxController {
   final List<Widget> pages = [
     OtherPage(),
     ProductPage(),
+    RoomPage(),
     ProfilePage(),
   ];
 
@@ -69,6 +71,10 @@ class HomePage extends StatelessWidget {
               BottomNavigationBarItem(
                 icon: Icon(Icons.search),
                 label: 'Search',
+              ),
+               BottomNavigationBarItem(
+                icon: Icon(Icons.search),
+                label: 'Room',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.account_circle),
